@@ -43,17 +43,20 @@ var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('myCanva
 
     var mesh = new THREE.Mesh              (geometry, material);
     var ringMesh = new THREE.Mesh              (ring, material);
-    var innerMesh = new THREE.Mesh  (inner, material);
+    var innerMesh = new THREE.Mesh            (inner, material);
+
 
     if(window.innerWidth <= 800) {
-      alert('MOBILE!');
-      mesh.position.set          (0, 0, -100);
-
+      // alert('MOBILE!');
+      mesh.position.set            (0, 0, -100);
+      ringMesh.position.set        (0, 0, -100);
+      ringMesh.rotation.set         (200, 0, 0);
+      innerMesh.position.set       (0, 0, -100);
     } else {
       mesh.position.set            (0, 0, -100);
       ringMesh.position.set        (0, 0, -100);
       ringMesh.rotation.set         (200, 0, 0);
-      innerMesh.position.set        (0, 0, -100);
+      innerMesh.position.set       (0, 0, -100);
     }
 
 
